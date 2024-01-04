@@ -1,7 +1,3 @@
-local wget = require("wget")
-local githubUrl = "https://github.com/DimskOfficial/DimskEfi/raw/main/HashiServers.lua"
-local savePath = "/home/HashiServers.lua"
-
 local text = [[
   _   _           _     _ ____                               
  | | | | __ _ ___| |__ (_) ___|  ___ _ ____   _____ _ __ ___ 
