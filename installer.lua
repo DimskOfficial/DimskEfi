@@ -10,6 +10,7 @@ print(text)
 print("Скачиваю файл HashiServers.lua")
 local internet = require("internet")
 local filesystem = require("filesystem")
+local computer = require("computer")
 
 -- URL файла на GitHub
 local url = "https://github.com/DimskOfficial/DimskEfi/raw/main/HashiServers.lua"
