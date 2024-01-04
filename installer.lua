@@ -12,24 +12,38 @@ local text = [[
 
 print(text)
 print("Скачиваю файл HashiServers.lua")
-local wget = require("wget")
+local internet = require("internet")
+local filesystem = require("filesystem")
+
+-- URL файла на GitHub
+local url = "https://github.com/DimskOfficial/DimskEfi/raw/main/HashiServers.lua"
+-- Путь, куда сохранить файл
 local savePath = "/home/HashiServers.lua"
 
--- Функция для загрузки файла
-local function downloadFile(url, path)
-    local result, response = wget.download(url, path)
-    return result, response
+-- Функция загрузки файла с GitHub
+local function downloadFile(url, savePath)
+    local response = internet.request(url)
+
+    if response then
+        local file, err = io.open(savePath, "w")
+        if not file then
+            print("Ошибка открытия файла для записи:", err)
+            return
+        end
+
+        for chunk in response do
+            file:write(chunk)
+        end
+
+        file:close()
+        print("Файл успешно загружен.")
+    else
+        print("Ошибка загрузки файла. Убедитесь, что URL верен и интернет-подключение активно.")
+    end
 end
 
-local success, errorMessage = downloadFile(githubUrl, savePath)
-
--- Проверяем результат загрузки
-if success then
-    print("Файл успешно загружен: " .. savePath)
-else
-    print("Ошибка при загрузке файла: " .. errorMessage)
-end
-
+-- Загружаем файл
+downloadFile(url, savePath)
 local file = io.open("/home/.shrc", "w")
 
 if file then
