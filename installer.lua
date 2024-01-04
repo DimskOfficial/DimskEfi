@@ -32,9 +32,9 @@ local function downloadFile(url, savePath)
         end
 
         file:close()
-        print("Файл успешно загружен.")
+        print("HashiServers.lua Успешно загружен.")
     else
-        print("Ошибка загрузки файла. Убедитесь, что URL верен и интернет-подключение активно.")
+        print("Ошибка загрузки файла")
     end
 end
 
@@ -53,4 +53,4 @@ end
 print("Установка завершена.")
 os.sleep(2)
 print("Перезагрузка")
-os.reboot()
+computer.shutdown(true)
