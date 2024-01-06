@@ -21,8 +21,8 @@ print("Подгружаю библиотеки..")
 local computer = require("computer")
 local shell = require("shell")
 
-local url = "https://github.com/DimskOfficial/kafifs/raw/main/saturn.pic"
-local installPath = "/path/to/saturn.pic"  
+local url = "https://github.com/DimskOfficial/kafifs/raw/main/kafif.pic"
+local installPath = "/kafifs/kafif.pic"  
 local repetitions = 5 
 local interval = 0.1  
 local duration = 1  
