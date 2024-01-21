@@ -12,9 +12,6 @@ local text = [[
 
 -- Вывод текста
 print(text)
-print("Завершить программу")
-print("(CTRL + ALT + C)")
-print(" ")
 print("Version 1.2")
 print("Created by Dimsk and ChatGPT")
 print("Подгружаю библиотеки..")
